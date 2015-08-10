@@ -16,5 +16,6 @@
 # \subsection{Disable automatic login}
 
 class autologin::no {
-    include "autologin::no::${::osfamily}"
+    $lower_osfamily = downcase($::osfamily)
+    include "autologin::no::${lower_osfamily}"
 }
